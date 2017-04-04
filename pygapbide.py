@@ -5,7 +5,7 @@ Chun Li,Jianyong Wang.
 Efficiently Mining Closed Subsequences with Gap Constraints.
 Siam SDM 2008.
 
-Copyright (c) 2010 by Chun Li
+Copyright (c) 2017 by Chun Li
 
 Permission is hereby granted, free of charge, to any person 
 obtaining a copy of this software and associated documentation 
@@ -131,7 +131,7 @@ class Gapbide:
         for (sid, begin, end) in pdb:
             seq = self.sdb[sid]
             new_begin = begin - self.n - 1
-            new_end = begin - self.m - 1
+            new_end = begin - self.m
             if new_end < 0: continue
             if new_begin < 0: new_begin = 0
             for pos in range(new_begin, new_end):
