@@ -51,7 +51,7 @@ class Gapbide:
         '''
         overide this function to output patterns to files.
         '''
-        print pattern, sup, pad
+        print(pattern, sup, pad)
         
     def gen_l1_patterns(self):
         '''
@@ -61,7 +61,7 @@ class Gapbide:
         for sid in range(len(self.sdb)):
             seq = self.sdb[sid]
             for pos in range(len(seq)):
-                if pdb_dict.has_key( seq[pos] ):
+                if seq[pos] in pdb_dict:
                     pdb_dict[seq[pos]].append( (sid, pos, pos) )
                 else:
                     pdb_dict[seq[pos]] = [ (sid, pos, pos) ]
@@ -91,7 +91,7 @@ class Gapbide:
             if new_begin >= len(seq): continue
             if new_end > len(seq): new_end = len(seq)
             for pos in range(new_begin, new_end):
-                if pdb_dict.has_key( seq[pos] ):
+                if seq[pos] in pdb_dict:
                     pdb_dict[seq[pos]].append( (sid, begin, pos) )
                 else:
                     pdb_dict[seq[pos]] = [ (sid, begin, pos) ]
@@ -113,7 +113,7 @@ class Gapbide:
             if new_begin >= len(seq): continue
             if new_end > len(seq): new_end = len(seq)
             for pos in range(new_begin, new_end):
-                if sids.has_key( seq[pos] ):
+                if seq[pos] in sids:
                     sids[ seq[pos] ].append( sid )
                 else:
                     sids[ seq[pos] ] = [sid]
@@ -135,7 +135,7 @@ class Gapbide:
             if new_end < 0: continue
             if new_begin < 0: new_begin = 0
             for pos in range(new_begin, new_end):
-                if sids.has_key( seq[pos] ):
+                if seq[pos] in sids:
                     sids[ seq[pos] ].append( sid )
                 else:
                     sids[ seq[pos] ] = [sid]
@@ -149,5 +149,3 @@ class Gapbide:
             if backward and prune:
                 break
         return (backward, prune)
-
-    
