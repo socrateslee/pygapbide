@@ -51,7 +51,7 @@ class Gapbide:
         '''
         overide this function to output patterns to files.
         '''
-        print(pattern, sup, pad)
+        print(pattern, sup, pdb)
         
     def gen_l1_patterns(self):
         '''
