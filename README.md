@@ -2,9 +2,9 @@
 
 Migrated from [Google Code Archive](https://code.google.com/archive/p/pygapbide/). Python implementation of [Gap-Bide algorithm](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.140.6278&rep=rep1&type=pdf).
 
-To use the code: 
+To use the code:
 
-```
+```python
 from pygapbide import *
 sdb = [[1, 2, 3, 4],
        [1, 4, 2, 3, 5],
